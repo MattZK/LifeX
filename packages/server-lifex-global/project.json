@@ -1,16 +1,16 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/server/src",
+  "sourceRoot": "packages/server-lifex-global/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/server",
-        "main": "packages/server/src/main.ts",
-        "tsConfig": "packages/server/tsconfig.app.json",
-        "assets": ["packages/server/src/assets"]
+        "outputPath": "dist/packages/server-lifex-global",
+        "main": "packages/server-lifex-global/src/main.ts",
+        "tsConfig": "packages/server-lifex-global/tsconfig.app.json",
+        "assets": ["packages/server-lifex-global/src/assets"]
       },
       "configurations": {
         "production": {
@@ -19,8 +19,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "packages/server/src/environments/environment.ts",
-              "with": "packages/server/src/environments/environment.prod.ts"
+              "replace": "packages/server-lifex-global/src/environments/environment.ts",
+              "with": "packages/server-lifex-global/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -29,21 +29,21 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "server:build"
+        "buildTarget": "server-lifex-global:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/server/**/*.ts"]
+        "lintFilePatterns": ["packages/server-lifex-global/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/server"],
+      "outputs": ["coverage/packages/server-lifex-global"],
       "options": {
-        "jestConfig": "packages/server/jest.config.ts",
+        "jestConfig": "packages/server-lifex-global/jest.config.ts",
         "passWithNoTests": true
       }
     }

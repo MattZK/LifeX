@@ -1,0 +1,7 @@
+{
+  "name": "app-lifex-location",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
